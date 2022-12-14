@@ -1,0 +1,11 @@
+---
+- hosts: myserver
+  tasks:
+    - name: Install Maven using Ansible
+      become: yes
+      yum:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+           - maven
