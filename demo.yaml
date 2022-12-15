@@ -1,0 +1,12 @@
+---
+
+- name: Install Docker and Docker Compose on CentOS
+  hosts: myserver
+  become: true
+  tasks:
+    - name: Create a data container
+      docker_container:
+        name: mydata
+        image: busybox
+        volumes:
+          - /data
